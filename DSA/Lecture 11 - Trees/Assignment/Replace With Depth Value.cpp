@@ -57,31 +57,20 @@ void helper(TreeNode<int>* root, int depth){
         root -> data = depth;
         return;
     }
+    
     root -> data = depth;
     depth++;
+    
     for (int i = 0; i < root -> children.size(); i++)
     {
-        
         helper(root -> children[i],depth);
     }
-
-    /*for (int i = 0; i < root -> children.size(); i++)
-    {
-        root -> children[i] -> data = depth;
-    }*/
-
 }
-  //  1
-  ///2 3 4
-//4 5
 
 void replaceWithDepthValue(TreeNode<int>* root) {
     if(root ==NULL){
         return;
     }
-
-    //int depth = 0;
-
     helper(root,0);
 }
 
