@@ -15,14 +15,7 @@ int main()
 {
     BinaryTreeNode<int>* root = takeInputLW();
     cout <<endl;
-
-    /*BinaryTreeNode<int>* root = new BinaryTreeNode<int>(1);
-    BinaryTreeNode<int>* left = new BinaryTreeNode<int>(2);
-    BinaryTreeNode<int>* right = new BinaryTreeNode<int>(3);
-
-    root -> left = left;
-    root -> right = right;*/
-
+    
     printTree(root);
     cout << endl;
     cout << "Number of node : " << numNodes(root);
