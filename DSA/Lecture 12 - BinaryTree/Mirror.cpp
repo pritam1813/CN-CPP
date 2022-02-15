@@ -2,32 +2,24 @@
 #include "LevelWiseInputOutput.h"
 using namespace std;
 
+void swapTree(BinaryTreeNode<int>* &left, BinaryTreeNode<int>* &right){
+    
+    BinaryTreeNode<int>* temp = right;
+        right = left;
+        left = temp;
+}
+
 void mirrorBinaryTree(BinaryTreeNode<int>* root) {
+    // Write your code here
     if(root == NULL){
         return;
     }
-
-    if(root -> left != NULL && root -> right != NULL){
-        BinaryTreeNode<int>* temp = root -> right;
-        root -> right = root -> left;
-        root -> left = temp;
-    }
-    
-    if(root -> right != NULL && root -> left == NULL){
-        BinaryTreeNode<int>* temp = root -> right; 
-        root -> left = temp;
-        root -> right = NULL;
-    }
-    
-    if(root -> left != NULL && root -> right == NULL){
-        BinaryTreeNode<int>* temp = root -> left; 
-        root -> right = temp;
-        root -> left = NULL;
-    }
+    swapTree(root -> left, root -> right);
     
     mirrorBinaryTree(root -> right);
     mirrorBinaryTree(root -> left);
 }
+
 
 void printLevelATNewLine(BinaryTreeNode<int> *root) {
     queue<BinaryTreeNode<int> *> q;
