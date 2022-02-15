@@ -8,7 +8,6 @@ void mirrorBinaryTree(BinaryTreeNode<int>* root) {
     }
 
     if(root -> left != NULL && root -> right != NULL){
-        //swap(root -> left -> data,root -> right -> data );
         BinaryTreeNode<int>* temp = root -> right;
         root -> right = root -> left;
         root -> left = temp;
