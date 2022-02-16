@@ -1,3 +1,7 @@
+#include <iostream>
+#include "LevelWiseInputOutput.h"
+using namespace std;
+
 int searchRoot(int *inorder,int inLength, int rootdata){
     
     if(inorder[inLength - 1] == rootdata){
