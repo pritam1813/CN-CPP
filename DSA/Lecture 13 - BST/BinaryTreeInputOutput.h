@@ -32,3 +32,40 @@ BinaryTreeNode<int> *takeInput() {
     }
     return root;
 }
+
+
+void printLevelATNewLine(BinaryTreeNode<int>* root) {
+    queue<BinaryTreeNode<int>*> q;
+    q.push(root);
+    q.push(NULL);
+    while (!q.empty()) {
+        BinaryTreeNode<int>* first = q.front();
+        q.pop();
+        if (first == NULL) {
+            if (q.empty()) {
+                break;
+            }
+            cout << endl;
+            q.push(NULL);
+            continue;
+        }
+        cout << first->data << " ";
+        if (first->left != NULL) {
+            q.push(first->left);
+        }
+        if (first->right != NULL) {
+            q.push(first->right);
+        }
+    }
+}
+
+void preOrder(BinaryTreeNode<int>* root) {
+    if (root == NULL) {
+        return;
+    }
+
+    cout << root->data << " ";
+
+    preOrder(root->left);
+    preOrder(root->right);
+}
