@@ -10,12 +10,8 @@ int getLCA(BinaryTreeNode <int>* root , int a, int b) {
     	return -1;
     }
 
-    if(root -> data == a){
-    	return a;
-    }
-
-    if(root -> data == b){
-    	return b;
+    if(root -> data == a || root -> data == b){
+    	return root -> data;
     }
 
     int leftAns = getLCA(root -> left,a,b);
