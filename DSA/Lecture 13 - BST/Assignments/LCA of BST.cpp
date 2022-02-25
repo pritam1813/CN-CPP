@@ -10,12 +10,8 @@ int getLCA(BinaryTreeNode<int>* root , int val1 , int val2){
     	return -1;
     }
 
-    if(root -> data == val1){
-    	return val1;
-    }
-
-    if(root -> data == val2){
-    	return val2;
+    if(root -> data == val1 || root -> data == val2){
+    	return root -> data;
     }
 
     int mn = min(val1,val2);
