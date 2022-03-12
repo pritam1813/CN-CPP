@@ -9,7 +9,6 @@ int pairSum(int *arr, int n) {
     for (int i = 0; i < n; ++i)
     {
         myMap[arr[i]]++;
-        
         if(myMap.count(-arr[i]) != 0){
             count += myMap[-arr[i]];
             if(arr[i] == -arr[i]){
@@ -20,18 +19,14 @@ int pairSum(int *arr, int n) {
     return count;
 }
 
-
 int main() {
     int n;
     cin >> n;
-
     int* arr = new int[n];
-
     for (int i = 0; i < n; ++i) {
         cin >> arr[i];
     }
 
     cout << pairSum(arr, n);
-
     delete[] arr;
 }
